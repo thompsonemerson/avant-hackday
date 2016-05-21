@@ -23,11 +23,13 @@ angular.module('avantApp')
     { id: 16, cat: 'cabelos', titulo: 'Escova Alisadora Elétrica Chapinha Lcd 230c', marca: '', img: 'http://iacom1-a.akamaihd.net/produtos/01/00/sku/12807/3/12807333G1.jpg', preco: 'R$ 137,00' },
   ];
 
+
   (function($){
     $(function(){
       setTimeout(function(){
         $('.produtos').slick({
           infinite: true,
+          lazyLoad: 'ondemand',
           slidesToShow: 4,
           slidesToScroll: 1,
           speed: 300,

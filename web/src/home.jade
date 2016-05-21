@@ -1,40 +1,61 @@
-div( class="slider" )
-  div
-    img( src="https://placeholdit.imgix.net/~text?txtsize=53&txt=image1&w=900&h=400&txttrack=0" )
-  div
-    img( src="https://placeholdit.imgix.net/~text?txtsize=53&txt=image2&w=900&h=400&txttrack=0" )
-  div
-    img( src="https://placeholdit.imgix.net/~text?txtsize=53&txt=image3&w=900&h=400&txttrack=0" )
+section( class="slide-home" )
+  div( class="container" )
+    div( class="slide" )
+      div
+        img( src="img/banner-1.jpg" )
+        div( class="texto" )
+          h3 Camiseta Ellus 2nd Floor Snake
+          div( class="preco" ) R$ 
+            span 79,90
+          button( class="waves-effect waves-light black btn-large" ) Comprar
+      div
+        img( src="img/banner-2.jpg" )
+        div( class="texto" )
+          h3 212 Vip Rosé New York Pills Eau de Parfum - 20 ml
+          div( class="preco" ) R$ 
+            span 199,00
+          button( class="waves-effect waves-light black btn-large" ) Comprar
+      div
+        img( src="img/banner-3.jpg" )
+        div( class="texto" )
+          h3 Kit For 25 Years Our Lips Have Been - 1 unid.
+          div( class="preco" ) R$ 
+            span 459,00
+          button( class="waves-effect waves-light black btn-large" ) Comprar
+    div( id="btn-next-principal" class="arrows arrow-left fa fa-angle-left" )
+    div( id="btn-prev-principal" class="arrows arrow-right fa fa-angle-right" )
 
-div( class="row" )
-  div( class="col s3" )
-    aside( class="sidebar z-depth-1" )
-      div( class="side-header" )
-        | Navegação
-      div( class="side-body" )
-        ul
-          li
-            input( type="checkbox" id="roupas" name="categoria[]" value="roupas" )
-            label( for="roupas" ) Roupas
-          li
-            input( type="checkbox" id="perfumes" name="categoria[]" value="perfumes" )
-            label( for="perfumes" ) Perfumes
-          li
-            input( type="checkbox" id="maquiagens" name="categoria[]" value="maquiagens" )
-            label( for="maquiagens" ) Maquiagens
-          li
-            input( type="checkbox" id="cabelos" name="categoria[]" value="cabelos" )
-            label( for="cabelos" ) Cabelos
-  
-  div( class="col s9" )
-    div( class="produtos" )
-      div( class="item" ng-repeat="item in produtos | filter:categoria" )
-        div( class="card" )
-          div( class="card-image" )
-            a( href="#/produto/{{ item.id }}" )
-              img( ng-src="{{ item.img }}" )
-          div( class="card-content" )
-            a( href="#/produto/{{ item.id }}" )
-              h3 {{ item.titulo }}
-          div( class="card-action" )
-            a( href="#/produto/{{ item.id }}" ) {{ item.preco }}
+
+div( class="container" )
+  div( class="row" )
+    div( class="col s3" )
+      aside( class="sidebar z-depth-1" )
+        div( class="side-header" )
+          | Navegação
+        div( class="side-body" )
+          ul
+            li
+              input( type="checkbox" id="roupas" ng-click="includeCat('roupas')" )
+              label( for="roupas" ) Roupas
+            li
+              input( type="checkbox" id="perfumes" ng-click="includeCat('perfumes')" )
+              label( for="perfumes" ) Perfumes
+            li
+              input( type="checkbox" id="maquiagens" ng-click="includeCat('maquiagens')" )
+              label( for="maquiagens" ) Maquiagens
+            li
+              input( type="checkbox" id="cabelos" ng-click="includeCat('cabelos')" )
+              label( for="cabelos" ) Cabelos
+    
+    div( class="col s9" )
+      div( class="produtos" )
+        div( class="item" ng-repeat="item in produtos | filter:catFilter" )
+          div( class="card" )
+            div( class="card-image" )
+              a( href="#/produto/{{ item.id }}" )
+                img( ng-src="{{ item.img }}" )
+            div( class="card-content" )
+              a( href="#/produto/{{ item.id }}" )
+                h3 {{ item.titulo }}
+            div( class="card-action" )
+              a( href="#/produto/{{ item.id }}" ) {{ item.preco }}
