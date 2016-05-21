@@ -1,0 +1,10 @@
+{
+  "name": "avant-hackday",
+  "private": "true",
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "slick-carousel": "^1.6.0"
+  }
+}

@@ -1,1 +1,1 @@
-# avant-hackday
+# Avant Hacking Day

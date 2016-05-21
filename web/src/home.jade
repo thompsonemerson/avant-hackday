@@ -1,0 +1,40 @@
+div( class="slider" )
+  div
+    img( src="https://placeholdit.imgix.net/~text?txtsize=53&txt=image1&w=900&h=400&txttrack=0" )
+  div
+    img( src="https://placeholdit.imgix.net/~text?txtsize=53&txt=image2&w=900&h=400&txttrack=0" )
+  div
+    img( src="https://placeholdit.imgix.net/~text?txtsize=53&txt=image3&w=900&h=400&txttrack=0" )
+
+div( class="row" )
+  div( class="col s3" )
+    aside( class="sidebar z-depth-1" )
+      div( class="side-header" )
+        | Navegação
+      div( class="side-body" )
+        ul
+          li
+            input( type="checkbox" id="roupas" name="categoria[]" value="roupas" )
+            label( for="roupas" ) Roupas
+          li
+            input( type="checkbox" id="perfumes" name="categoria[]" value="perfumes" )
+            label( for="perfumes" ) Perfumes
+          li
+            input( type="checkbox" id="maquiagens" name="categoria[]" value="maquiagens" )
+            label( for="maquiagens" ) Maquiagens
+          li
+            input( type="checkbox" id="cabelos" name="categoria[]" value="cabelos" )
+            label( for="cabelos" ) Cabelos
+  
+  div( class="col s9" )
+    div( class="produtos" )
+      div( class="item" ng-repeat="item in produtos | filter:categoria" )
+        div( class="card" )
+          div( class="card-image" )
+            a( href="#/produto/{{ item.id }}" )
+              img( ng-src="{{ item.img }}" )
+          div( class="card-content" )
+            a( href="#/produto/{{ item.id }}" )
+              h3 {{ item.titulo }}
+          div( class="card-action" )
+            a( href="#/produto/{{ item.id }}" ) {{ item.preco }}
