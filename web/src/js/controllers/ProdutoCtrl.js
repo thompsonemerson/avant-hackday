@@ -36,6 +36,21 @@ angular.module('avantApp')
           autoplay: true
         });
       }, 200);
+
+      $('.comprar--js').on('click', function(){
+        swal({
+          title: "Continuar?",
+          text: "Você será redirecionado para o paypal, deseja prosseguir?",
+          type: "warning",
+          showCancelButton: true,
+          cancelButtonText: 'Cancelar',
+          confirmButtonColor: "#1C1C1C",
+          confirmButtonText: "Sim, desejo concluir!",
+          closeOnConfirm: false
+        }, function(){
+          swal("Sucesso!", "Sua compra foi efetuada com êxito.", "success");
+        });
+      });
     });
   })(jQuery);
 

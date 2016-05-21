@@ -1,21 +1,21 @@
 section( class="slide-home" )
   div( class="container" )
     div( class="slide" )
-      div
+      a( href="#/produto/9" )
         img( src="img/banner-1.jpg" )
         div( class="texto" )
           h3 Camiseta Ellus 2nd Floor Snake
           div( class="preco" ) R$ 
             span 79,90
           button( class="waves-effect waves-light black btn-large" ) Comprar
-      div
+      a( href="#/produto/1" )
         img( src="img/banner-2.jpg" )
         div( class="texto" )
           h3 212 Vip Rosé New York Pills Eau de Parfum - 20 ml
           div( class="preco" ) R$ 
             span 199,00
           button( class="waves-effect waves-light black btn-large" ) Comprar
-      div
+      a( href="#/produto/8" )
         img( src="img/banner-3.jpg" )
         div( class="texto" )
           h3 Kit For 25 Years Our Lips Have Been - 1 unid.
@@ -30,8 +30,12 @@ div( class="container" )
   div( class="row" )
     div( class="col s3" )
       aside( class="sidebar z-depth-1" )
+        div( class="side-body" )
+          div(class="input-field")
+            input( id="email" type="email" class="validate" )
+            label( for="email" data-error="wrong" data-success="right" ) Busca Rápida
         div( class="side-header" )
-          | Navegação
+          | Categorias
         div( class="side-body" )
           ul
             li
